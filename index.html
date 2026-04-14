@@ -1,20 +1,641 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Oybek Portfolio</title>
-  <!-- Google Analytics  -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KJ6K5VP353"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oybek Tashpulatov | QA Automation Engineer</title>
+  <meta
+    name="description"
+    content="Portfolio of Oybek Tashpulatov - QA Automation Engineer focused on AI-driven testing, Python, Selenium, API testing, and SQL."
+  />
 
-  gtag('config', 'G-KJ6K5VP353');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJ6K5VP353"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KJ6K5VP353');
+  </script>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 25%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #bae6fd;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 2.4vw, 28px);
+      margin: 0 0 14px;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    .hero-text {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--white);
+    }
+
+    .hero-card,
+    .card,
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 28px;
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+    }
+
+    .hero-list li:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 0 0 14px;
+      color: var(--white);
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .about-grid,
+    .stats-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 22px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .stat-number {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stack-card {
+      padding: 22px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+    }
+
+    .stack-card h3 {
+      margin: 0 0 12px;
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #dbeafe;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 24px;
+    }
+
+    .project-card {
+      padding: 24px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 12px;
+      color: var(--white);
+      font-size: 22px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .project-card ul {
+      padding-left: 18px;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    .project-card li + li {
+      margin-top: 8px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 24px;
+    }
+
+    .contact-item {
+      padding: 22px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+    }
+
+    .contact-label {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      color: var(--white);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: 32px 0 50px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .stack-grid,
+      .projects-grid,
+      .contact-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Oybek Tashpulatov</h1>
-  <p>QA Automation Engineer</p>
-  <p>My portfolio is coming soon 🚀</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Oybek Tashpulatov</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">QA Portfolio Website</div>
+        <h1>Hi, I'm Oybek Tashpulatov</h1>
+        <p class="hero-subtitle">QA Automation Engineer | AI-Driven Testing</p>
+        <p class="hero-text">
+          I build reliable test automation frameworks and explore AI to improve software
+          quality, speed, and efficiency. My focus is on scalable automation solutions
+          for web, API, and end-to-end testing.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/moonbek"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event', 'click_github', { event_category: 'contact', event_label: 'GitHub Hero Button' });"
+          >
+            View GitHub
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.linkedin.com/in/oybek-tashpulatov"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event', 'click_linkedin', { event_category: 'contact', event_label: 'LinkedIn Hero Button' });"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="mailto:imoonbek@gmail.com"
+            onclick="gtag('event', 'click_email', { event_category: 'contact', event_label: 'Email Hero Button' });"
+          >
+            Email Me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Quick Overview</h3>
+        <ul class="hero-list">
+          <li>5+ years in Software Quality Assurance</li>
+          <li>Python, Selenium, API Testing, SQL, JavaScript</li>
+          <li>Experience with Web, API, and Cloud systems</li>
+          <li>Focused on End-to-End, Regression, and Performance testing</li>
+          <li>Interested in AI-assisted QA workflows</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-text">
+        I am a QA Automation Engineer with hands-on experience in building automation
+        solutions for modern applications. I enjoy improving testing efficiency,
+        validating real user flows, and combining QA with AI-driven approaches.
+      </p>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>What I Do</h3>
+          <p>
+            I work with UI automation, API validation, regression coverage, and
+            end-to-end scenarios. I like turning repetitive testing into stable,
+            reusable automation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What I Focus On</h3>
+          <p>
+            Clean automation structure, test reliability, meaningful coverage,
+            and practical QA solutions that support both product quality and
+            delivery speed.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Years in QA</div>
+        </div>
+        <div class="card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Featured Projects</div>
+        </div>
+        <div class="card">
+          <div class="stat-number">UI</div>
+          <div class="stat-label">Automation Focus</div>
+        </div>
+        <div class="card">
+          <div class="stat-number">API</div>
+          <div class="stat-label">Testing & Validation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stack">
+    <div class="container">
+      <h2 class="section-title">Tech Stack</h2>
+      <p class="section-text">
+        Tools and technologies I use in QA automation, API testing, and portfolio projects.
+      </p>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">SQL</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <h3>Automation</h3>
+          <div class="chips">
+            <span class="chip">Selenium</span>
+            <span class="chip">Pytest</span>
+            <span class="chip">unittest</span>
+            <span class="chip">Page Object Model</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <h3>API Testing</h3>
+          <div class="chips">
+            <span class="chip">Postman</span>
+            <span class="chip">requests</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">JSON</span>
+          </div>
+        </div>
+
+        <div class="stack-card">
+          <h3>Other</h3>
+          <div class="chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">CI/CD</span>
+            <span class="chip">AI tools</span>
+            <span class="chip">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-text">
+        Selected QA automation projects that reflect my practical work and learning path.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>SauceDemo Automation</h3>
+          <p>Hybrid QA project combining UI automation and API-based data flow validation.</p>
+          <ul>
+            <li>Selenium + Python + API integration</li>
+            <li>End-to-end checkout flow coverage</li>
+            <li>Focus on realistic test scenarios</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>Porsche UI Automation</h3>
+          <p>UI automation project focused on stability, structure, and real user behavior.</p>
+          <ul>
+            <li>Selenium WebDriver testing</li>
+            <li>Page Object Model structure</li>
+            <li>Smoke and UI flow validation</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>DemoBlaze QA Project</h3>
+          <p>Portfolio project in progress covering multiple QA layers for one application.</p>
+          <ul>
+            <li>UI + API + Performance + Security testing</li>
+            <li>Complete QA strategy from scratch</li>
+            <li>Built as a portfolio-ready case study</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">
+        Feel free to connect with me for collaboration, QA opportunities, or portfolio discussions.
+      </p>
+
+      <div class="contact-grid">
+        <a
+          class="contact-item"
+          href="mailto:imoonbek@gmail.com"
+          onclick="gtag('event', 'click_email', { event_category: 'contact', event_label: 'Email Contact Card' });"
+        >
+          <div class="contact-label">Email</div>
+          <div class="contact-value">imoonbek@gmail.com</div>
+        </a>
+
+        <a
+          class="contact-item"
+          href="https://www.linkedin.com/in/oybek-tashpulatov"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'click_linkedin', { event_category: 'contact', event_label: 'LinkedIn Contact Card' });"
+        >
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">oybek-tashpulatov</div>
+        </a>
+
+        <a
+          class="contact-item"
+          href="https://github.com/moonbek"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event', 'click_github', { event_category: 'contact', event_label: 'GitHub Contact Card' });"
+        >
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/moonbek</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Oybek Tashpulatov | QA Automation Engineer Portfolio
+    </div>
+  </footer>
 </body>
 </html>
