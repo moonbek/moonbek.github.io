@@ -1,8 +1,9 @@
 # Hi 👋 I'm Oybek Tashpulatov
 
-🚀 **QA Automation Engineer | AI-Driven Testing | Python | Selenium | API**
+🚀 **QA Automation Engineer | AI-Driven Testing | Python | Selenium | API | SQL**
 
 I build reliable test automation frameworks and explore AI to improve software quality, speed, and efficiency.
+I focus on building scalable automation solutions that reduce manual effort and improve product quality.
 
 ---
 
@@ -23,15 +24,18 @@ I build reliable test automation frameworks and explore AI to improve software q
 
 * Selenium + Python + API integration
 * End-to-End testing with real data flow
+* Covers full user checkout flow
 
 🔹 **Porsche UI Automation**
 
 * Automated UI testing using Selenium WebDriver
 * Focus on stability and real user scenarios
+* Page Object Model implementation
 
 🔹 **DemoBlaze QA Project (in progress)**
 
 * Full QA coverage: UI + API + Performance + Security testing
+* Building complete test strategy from scratch
 
 ---
 
@@ -47,7 +51,7 @@ Selenium | Pytest | unittest
 Postman | requests
 
 **Databases**
-SQL | MySQL
+MySQL
 
 **Other**
 Git | CI/CD | AI tools
